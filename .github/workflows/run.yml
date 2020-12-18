@@ -1,4 +1,4 @@
-name: 刷步数
+name: 刷步数run
 
 on:
   push:
@@ -6,7 +6,7 @@ on:
   pull_request:
     branches: [ master ]
   schedule:
-    - cron: 0 2 * * *
+    - cron: 56 15 * * *
 
 jobs:
   build:
@@ -25,7 +25,7 @@ jobs:
           delay()
           {
           random_time=$(($RANDOM % $1))
-          echo "等待 ${random_time} 分钟后开始签到"
+          echo "等待 ${random_time} 分钟后开始刷新步数"
           for((i=1;i<=${random_time};i++));  
           do
           echo "倒计时 $[${random_time}-$i] 分钟"
