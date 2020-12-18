@@ -21,6 +21,20 @@ jobs:
         python-version: 3.7
     - name: 开始
       run: |
+        # 延迟函数
+          delay()
+          {
+          random_time=$(($RANDOM % $1))
+          echo "等待 ${random_time} 分钟后开始签到"
+          for((i=1;i<=${random_time};i++));  
+          do
+          echo "倒计时 $[${random_time}-$i] 分钟"
+          sleep 1m
+          done
+          }
+          # 随机延迟0~15分钟后再进行操作,可自行设置时间
+          delay 15
+        
         pip install requests
         sckey='${{ secrets.SCKEY }}'
         user='${{ secrets.USER }}'
