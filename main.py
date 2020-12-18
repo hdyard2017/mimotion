@@ -19,7 +19,7 @@ def login(user,password):
     url1 = "https://api-user.huami.com/registrations/+86" + user + "/tokens"
     headers = {
         "Content-Type":"application/x-www-form-urlencoded;charset=UTF-8",
-    "User-Agent":"MiFit/4.6.0 (iPhone; iOS 14.0.1; Scale/2.00)"
+    "User-Agent":"MiFit/4.6.0 (iPhone; iOS 14.3; Scale/2.00)"
         }
     data1 = {
         "client_id":"HuaMi",
@@ -68,7 +68,7 @@ def main(user, passwd, step, sckey):
     
     if step == '':
         print ("已设置为随机步数（10000-19999）")
-        step = str(random.randint(10000,19999))
+        step = str(8888+random.randint(10000,19999))
     login_token = 0
     login_token,userid = login(user,password)
     if login_token == 0:
