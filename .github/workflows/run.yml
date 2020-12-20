@@ -31,11 +31,11 @@ jobs:
           sleep 1m
           done
           }
-          # 随机延迟0~15分钟后再进行操作,可自行设置时间
-          delay 15
-   # 开始刷新部署
-    - name: reflash steps
-           run: |
+          # 随机延迟0~30分钟后再进行操作,可自行设置时间
+          delay 30
+   # 开始刷新步数
+    - name: 步数刷新
+      run: |
         pip install requests
         sckey='${{ secrets.SCKEY }}'
         user='${{ secrets.USER }}'
